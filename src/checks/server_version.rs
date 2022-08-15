@@ -21,6 +21,7 @@ pub fn check() -> anyhow::Result<Version> {
         Ok(kubectl) => {
             let output = match Command::new(kubectl)
                 .arg("version")
+                .arg("--client=false")
                 .arg("-o")
                 .arg("json")
                 .output()
