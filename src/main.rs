@@ -14,7 +14,7 @@ fn main() {
     let kubelet_version = match checks::kubelet_version::check() {
         Ok(c) => c,
         Err(e) => panic!("❌ Failed to check kubelet version: {}", e")
-    }
+    };
 
     println!(
         "✅ kubelet version {}.{}",
